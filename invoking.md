@@ -7,7 +7,7 @@ phpdbg is, by default, an interactive console program, invoked in the same way a
 
 This does not execute the script, instead it opens an interactive prompt, ready to inspect and or execute ```/path/to/script.php```.
 
-To run the script:
+To execute the script:
 
     run
     
