@@ -13,4 +13,27 @@ To run the script:
     
 Usually, break or watch points should be set before ```run``` is executed.
 
-*Note: phpdbg takes many of the same options that the PHP interpreter accepts.*
+phpdbg options
+--------------
+
+<table>
+<thead>
+    <tr>
+        <th>Option</th>
+        <th>Example</th>
+        <th>Purpose</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>*c*</td>
+        <td>-c/path/to/php.ini</td>
+        <td>Set php.ini file to load</td>
+    </tr>
+    <tr>
+        <td>*c*</td>
+        <td>-c/path/to/php.ini</td>
+        <td>Set php.ini file to load</td>
+    </tr>
+</tbody>
+</table>
