@@ -21,4 +21,4 @@ To build phpdbg for an old version of PHP, assuming ```/usr/src/php-src``` conta
     ./buildconf --force
     ./configure [normal build options here] --enable-phpdbg
 
-Make install will install the ```phpdbg``` in the same directory as other binaries.
+`make install` will install the ```phpdbg``` in the same directory as other binaries.
