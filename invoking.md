@@ -26,7 +26,7 @@ phpdbg options
 </thead>
 <tbody>
     <tr>
-        <td>*c*</td>
+        <td><b>c</b></td>
         <td>-c/path/to/php.ini</td>
         <td>Set php.ini file to load</td>
     </tr>
