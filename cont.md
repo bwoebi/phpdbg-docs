@@ -19,7 +19,7 @@ or, with shortcuts
 
     s s opcode
 
-Then each step command will just advance until the next opcode - instead of the next line.
+Then each `step` command will just advance until the next opcode &mdash; instead of the next line.
 
 To reset it later to line-by-line stepping:
 
