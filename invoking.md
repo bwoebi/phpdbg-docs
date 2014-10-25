@@ -1,5 +1,5 @@
-Invoking phpdbg
-===============
+Invocation
+==========
 
 phpdbg is, by default, an interactive console program, invoked in the same way as the PHP interpreter:
 
@@ -13,8 +13,8 @@ To execute the script:
     
 Usually, break or watch points should be set before ```run``` is executed.
 
-phpdbg options
---------------
+Options
+-------
 
 phpdbg will accept the following options on the command line:
 
