@@ -14,7 +14,7 @@ Building phpdbg with an old version of PHP
 
 phpdbg can be used with PHP from version 5.4.
 
-To build phpdbg for an old version of PHP, assuming ```/usr/src/php-src contains``` the source code to PHP:
+To build phpdbg for an old version of PHP, assuming ```/usr/src/php-src``` contains the source code to PHP:
 
     cd /usr/src/php-src
     git clone https://github.com/krakjoe/phpdbg sapi/phpdbg
