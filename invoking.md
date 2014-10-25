@@ -29,27 +29,27 @@ phpdbg will accept the following options on the command line:
 <tbody>
     <tr>
         <td><b>q</b></td>
-        <td>&nbsp;</td>
+        <td>-b</td>
         <td>Suppress welcome banner (quiet)</td>
     </tr>
     <tr>
         <td><b>v</b></td>
-        <td>&nbsp;</td>
+        <td>-v</td>
         <td>Enable opline logging output (verbosity)</td>
     </tr>
     <tr>
         <td><b>s</b></td>
-        <td>&nbsp;</td>
+        <td>-s</td>
         <td>Enable stepping (stepping)</td>
     </tr>
     <tr>
         <td><b>b</b></td>
-        <td>&nbsp;</td>
+        <td>-b</td>
         <td>Disable colours (boring)</td>
     </tr>
     <tr>
         <td><b>n</b></td>
-        <td>&nbsp;</td>
+        <td>-n</td>
         <td>Disable default php.ini (none)</td>
     </tr>
     <tr>
@@ -69,7 +69,7 @@ phpdbg will accept the following options on the command line:
     </tr>
     <tr>
         <td><b>I</b></td>
-        <td>&nbsp;</td>
+        <td>-I</td>
         <td>Ignore default .phpdbginit (ignore)</td>
     </tr>
     <tr>
@@ -79,22 +79,22 @@ phpdbg will accept the following options on the command line:
     </tr>
     <tr>
         <td><b>r</b></td>
-        <td>&nbsp;</td>
+        <td>-r</td>
         <td>Run immediately (run)</td>
     </tr>
     <tr>
         <td><b>rr</b></td>
-        <td>&nbsp;</td>
+        <td>-rr</td>
         <td>Run immediately, then exit (run and retract)</td>
     </tr>
     <tr>
         <td><b>E</b></td>
-        <td>&nbsp;</td>
+        <td>-E</td>
         <td>Enable stepping through eval'd code (evil)</td>
     </tr>
     <tr>
         <td><b>S</b></td>
-        <td>&nbsp;</td>
+        <td>-Scli</td>
         <td>Override SAPI name (sapi)</td>
     </tr>
     <tr>
@@ -109,7 +109,7 @@ phpdbg will accept the following options on the command line:
     </tr>
     <tr>
         <td><b>V</b></td>
-        <td>&nbsp;</td>
+        <td>-V</td>
         <td>Print version number (version)</td>
     </tr>
 </tbody>
