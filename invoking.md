@@ -109,3 +109,24 @@ phpdbg will accept the following options on the command line. Many of them are s
         </tr>
     </tbody>
 </table>
+
+Initialization
+--------------
+
+When phpdbg is started, it will look for a file named ```.phpdbginit``` in the current directory. The path to ```.phpdbginit``` can be overridden with the ```-i``` option (see options).
+
+A ```.phpdbginit``` file can contain phpdbg commands to execute, it can also contain code inline, follows is an example of an init file:
+
+```
+set prompt app>
+<:
+    /*
+     Do something here in PHP to setup the debugging session
+    */
+    do_something_to_setup();
+:>
+```
+
+Inline code must open with the tag ```<:``` on a line by itself, it must close with the tag ```:>``` on a line by itself.
+
+Initialization can be used to bootstrap the session for debugging a particular framework, component, or application.
