@@ -6,7 +6,7 @@ We will document here how command line debugging works, and dedicate a chapter t
 
 Here is a quick guide to help you to get started with phpdbg.
 
-- Building phpdbg with PHP
+- Building phpdbg
 - Invoking the debugger & running a script 
 - Evalutaing code
 - Setting breakpoints & basic continuation commands
