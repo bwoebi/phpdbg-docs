@@ -28,12 +28,53 @@ To reset it later to line-by-line stepping:
 leave
 =====
 
-...
+The leave command skips breakpoints until the VM encounters a ```return```.
+
+Given the following code:
+
+```
+<?php
+function foo() {
+    $other = bar();
+    
+    return ["hello", $other];
+}
+
+function bar() {
+    return "world";
+}
+
+foo();
+?>
+```
+
+Here is an example session that uses the leave command:
+
+    prompt> break foo
+    [Breakpoint #0 added at foo]
+    prompt> r
+    [Breakpoint #0 in foo() at /usr/src/php-src/dbg.php:3, hits: 1]
+    >00003:     $other = bar();
+     00004:     
+     00005:     return ["hello", $other];
+    prompt> leave
+    [Breaking for leave at /usr/src/php-src/dbg.php:5]
+    >00005:     return ["hello", $other];
+     00006: }
+     00007:
+
+As you can see, the first breakpoint at foo is hit, then the leave command is used to break at the next return statement.
+
+Any breakpoints between the call to bar() and the return statement will be skipped.
 
 finish
 ======
 
-....
+The finish command skips breakpoints until the current function is finished.
+
+Given the following code:
+
+
 
 until
 =====
