@@ -103,12 +103,30 @@ phpdbg will accept the following options on the command line. Many of them are s
             <td>Set remote console address (address)</td>
         </tr>
         <tr>
+            <td><b>p</b></td>
+            <td>-p*</td>
+            <td>Print opcode information (see below for further information)</td>
+        </tr>
+        <tr>
+            <td><b>h</b></td>
+            <td>-h</td>
+            <td>Print the help</td>
+        </tr>
+        <tr>
             <td><b>V</b></td>
             <td>-V</td>
             <td>Print version number (version)</td>
         </tr>
     </tbody>
 </table>
+
+### Opcode printing (-p option) ###
+There are a few options on how to print opcodes
+* **-p** Outputs the main execution context
+* **-p*** Outputs all opcodes in the whole file (including classes and functions)
+* **-p=function_name** Outputs opcodes of a given function in the file
+* **-p=class_name::** Outputs opcodes of all the methods of a given class
+* **-p=class_name::method** Outputs opcodes of a given method
 
 Initialization
 --------------
