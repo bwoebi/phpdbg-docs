@@ -27,6 +27,10 @@ The `frame` command will allow you to switch a stack frame you want to inspect. 
 
 where 5 is the number of the frame you've gotten from `back` command before.
 
+In that frame you now can get the current variables and even manipulate context (via `ev`).
+
+> Note that when not in top-frame, certain actions like `throw` via `ev` just discard the other frames and they will lead to memory leaks and other maybe unexpected behavior. Phpdbg shouldn't crash, though.
+
 info
 ----
 
