@@ -1,16 +1,16 @@
 Besides `continue` and normal `step`, there exist four other commands how you can advance through code:
 - step
 - next
+- until
 - leave
 - finish
-- until
 
 step
 ====
 
 Step. Yes, again. There is not only line by line stepping, but also opcode-by-opcode stepping.
 
-You might need it under some circumstances, when there's too much code on the current line and you cannot really follow it. Then step through it, it will show you in which order everything is executed. Or when something goes wrong due to a weird evalutaion order, which you need to debug.
+You might need it under some circumstances, when there's too much code on the current line and you cannot really follow it. Then step through it, it will show you in which order everything is executed. Or when something goes wrong due to a weird evaluation order, which you need to debug.
 
 Enabling it is as simple as
 
@@ -75,12 +75,37 @@ prompt>
 [Script ended normally]
 ```
 
+until
+=====
+
+The until command is similar to the next command, with the exception, that it does *not* add a breakpoint on the following line.
+
+```
+prompt> b foo
+[Breakpoint #0 added at foo]
+prompt> b bar
+[Breakpoint #1 added at bar]
+prompt> r
+[Breakpoint #0 in foo() at /Users/Bob/php-src-X/test.php:3, hits: 1]
+>00003:     $other = bar();
+ 00004:     
+ 00005:     return ["hello", $other];
+prompt> b 12
+[Breakpoint #2 added at /Users/Bob/php-src-X/test.php:12]
+prompt> until
+[Breakpoint #2 at /Users/Bob/php-src-X/test.php:12, hits: 1]
+>00012: foo();
+ 00013: 
+```
+
+It does not break on bar (called on the same line), but also doesn't break on the following line, only at the next breakpoint *after* the line where `until` was used.
+
 leave
 =====
 
 The leave command skips breakpoints until the VM encounters a `return`.
 
-Here is an example session that uses the leave command, with the same code already used for the next command:
+Here is an example session that uses the leave command:
 
     prompt> break foo
     [Breakpoint #0 added at foo]
@@ -122,8 +147,3 @@ prompt> finish
 ```
 
 As one can see here, it is similar to the leave command, but it does *not* add an extra breakpoint at the end of the function.
-
-until
-=====
-
-.....
