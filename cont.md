@@ -1,5 +1,6 @@
 Besides `continue` and normal `step`, there exist four other commands how you can advance through code:
 - step
+- next
 - leave
 - finish
 - until
@@ -25,10 +26,12 @@ To reset it later to line-by-line stepping:
 
     s s line
 
-leave
-=====
+next
+====
 
-The leave command skips breakpoints until the VM encounters a ```return```.
+We have step, but it steps *into* eventually encountered functions. Now, there is the next command, able to step *over* lines.
+
+If you use the next command, you never will land in functions deeper in the call stack.
 
 Given the following code:
 
@@ -48,7 +51,36 @@ foo();
 ?>
 ```
 
-Here is an example session that uses the leave command:
+As you see, when you are in `foo()` function while using `next`, you'll never run into `bar()`, but skip right over it:
+
+```
+prompt> break foo
+[Breakpoint #0 added at foo]
+prompt> r
+[Breakpoint #0 in foo() at /Users/Bob/php-src-X/test.php:3, hits: 1]
+>00003:     $other = bar();
+ 00004:     
+ 00005:     return ["hello", $other];
+prompt> next
+[L5          0x10f066560 INIT_ARRAY              "hello"                                   ~2                   /Users/Bob/php-src-X/test.php]
+>00005:     return ["hello", $other];
+ 00006: }
+ 00007: 
+prompt> n
+[L5          0x10f0665a0 RETURN                  ~2                                                             /Users/Bob/php-src-X/test.php]
+[L12         0x10f06b140 RETURN                  1                                                              /Users/Bob/php-src-X/test.php]
+>00012: foo();
+ 00013: 
+prompt> 
+[Script ended normally]
+```
+
+leave
+=====
+
+The leave command skips breakpoints until the VM encounters a `return`.
+
+Here is an example session that uses the leave command, with the same code already used for the next command:
 
     prompt> break foo
     [Breakpoint #0 added at foo]
