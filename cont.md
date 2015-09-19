@@ -104,9 +104,24 @@ finish
 
 The finish command skips breakpoints until the current function is finished.
 
-Given the following code:
+```
+prompt> b bar
+[Breakpoint #0 added at bar]
+prompt> b 5
+[Breakpoint #1 added at /Users/Bob/php-src-X/test.php:5]
+prompt> r
+[Breakpoint #0 in bar() at /Users/Bob/php-src-X/test.php:9, hits: 1]
+>00009:     return "world";
+ 00010: }
+ 00011: 
+prompt> finish
+[Breakpoint #1 at /Users/Bob/php-src-X/test.php:5, hits: 1]
+>00005:     return ["hello", $other];
+ 00006: }
+ 00007: 
+```
 
-
+As one can see here, it is similar to the leave command, but it does *not* add an extra breakpoint at the end of the function.
 
 until
 =====
