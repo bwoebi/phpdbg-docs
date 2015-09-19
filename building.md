@@ -1,13 +1,11 @@
 Building phpdbg with PHP
 ========================
 
-phpdbg needs to be built at the same time as the PHP source.
+phpdbg needs to be built at the same time as the PHP source. It is enabled by default (since PHP 7).
 
-The configure switch:
+The configure switch is needed for PHP 5.6:
 
     --enable-phpdbg
-
-Is available after PHP 5.6.
 
 Building phpdbg with an old version of PHP
 ==========================================
