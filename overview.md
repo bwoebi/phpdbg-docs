@@ -8,7 +8,7 @@ Here is a quick guide to help you to get started with phpdbg.
 
 - Building phpdbg
 - Invoking the debugger & running a script 
-- Evalutaing code
+- Evaluating code
 - Setting breakpoints & basic continuation commands
 - Inspecting your environment
 - Advanced continuation commands
