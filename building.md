@@ -1,22 +1,12 @@
-Building phpdbg with PHP
-========================
+Building
+========
 
-phpdbg needs to be built at the same time as the PHP source. It is enabled by default (since PHP 7).
-
-The configure switch is needed for PHP 5.6:
+Since PHP 5.6, phpdbg has been distributed with the source code of PHP. To configure the build process to compile the ```phpdbg``` binary, add the following configure switch:
 
     --enable-phpdbg
 
-Building phpdbg with an old version of PHP
-==========================================
+This will cause ```make``` to create the ```sapi/phpdbg/phpdbg```, subsequently ```make install``` will copy the ```phpdbg``` binary to the same path as the ```php``` binary.
 
-phpdbg can be used with PHP from version 5.4.
+Some distributions may package ```phpdbg``` separately from the ```php``` binary, some may not enable it at all: Refer to your package maintainer.
 
-To build phpdbg for an old version of PHP, assuming ```/usr/src/php-src``` contains the source code to PHP:
-
-    cd /usr/src/php-src
-    git clone https://github.com/krakjoe/phpdbg sapi/phpdbg
-    ./buildconf --force
-    ./configure [normal build options here] --enable-phpdbg
-
-`make install` will install the ```phpdbg``` in the same directory as other binaries.
+*phpdbg cannot be built independantly of the source code of PHP.*
